@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTR's Healthy AI</title>
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header>
+            <h1>DTR's Healthy AI 🥗</h1>
+            <p class="subtitle">Instant health insights for your food choices</p>
+        </header>
+
+        <section class="card input-section">
+            <div class="search-box">
+                <input type="text" id="foodInput" placeholder="Enter a food (e.g., pizza, dosa, salad)..."
+                    autocomplete="off">
+                <button id="analyzeBtn" class="primary-btn">Analyze ⚡</button>
+            </div>
+            <div class="quick-select">
+                <span class="label">Quick pick:</span>
+                <button class="chip" data-food="burger">🍔 Burger</button>
+                <button class="chip" data-food="salad">🥗 Salad</button>
+                <button class="chip" data-food="dosa">🥞 Dosa</button>
+                <button class="chip" data-food="fruits">🍎 Fruits</button>
+            </div>
+        </section>
+
+        <!-- Results Section (Hidden initially) -->
+        <section id="resultsSection" class="card results-section hidden">
+            <div class="results-header">
+                <h2 id="foodNameTitle">Food Result</h2>
+                <span id="healthLabel" class="badge">Moderate</span>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-value" id="scoreValue">7</span><span class="stat-max">/10</span>
+                    <span class="stat-label">Health Score</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-value" id="caloriesValue">~250</span>
+                    <span class="stat-label">kcal</span>
+                </div>
+            </div>
+
+            <p id="explanationText" class="explanation">This is a balanced option for a regular meal.</p>
+
+            <div class="suggestion-box">
+                <h3>💡 Smart Suggestion</h3>
+                <p id="suggestionText">Try having it with a side of vegetables.</p>
+            </div>
+        </section>
+
+        <section class="card mood-section">
+            <h2>How are you feeling today?</h2>
+            <div class="mood-buttons">
+                <button class="mood-btn" data-mood="stressed">Stressed 😞</button>
+                <button class="mood-btn" data-mood="tired">Tired 😴</button>
+                <button class="mood-btn" data-mood="energetic">Energetic 💪</button>
+            </div>
+            <div id="moodResult" class="mood-result hidden">
+                <p id="moodSuggestionText"></p>
+            </div>
+        </section>
+
+        <section class="card ai-tip-section">
+            <button id="aiTipBtn" class="secondary-btn">✨ Get an AI Health Tip</button>
+            <div id="aiTipResult" class="tip-result hidden">
+                <p id="aiTipText"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
